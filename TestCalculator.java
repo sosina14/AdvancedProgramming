@@ -38,7 +38,8 @@ public class TestCalculator {
                 System.out.println("Invalid operation. Please enter add, subtract, multiply, or divide.");
                 return;  // Exit if the operation is invalid
         }
-    
+        System.out.println("The result of " + operation + "ing " + a + " and " + b + " is: " + result);
+        scanner.close();  
     }
     
 }
