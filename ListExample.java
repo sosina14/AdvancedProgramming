@@ -14,7 +14,7 @@ public class ListExample {
         System.out.println("Names List: " + names);
 
         // Accessing elements by index
-        System.out.println("First Element: " + names.get(0));
+        System.out.println("First Element: " + names.get(2));
 
         // Iterating using for-each loop
         for (String name : names) {
