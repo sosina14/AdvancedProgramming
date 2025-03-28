@@ -1,0 +1,163 @@
+### **Java Packages: Everything You Need to Know**  
+
+#### **What is a Package in Java?**  
+A **package** in Java is a way to organize related classes and interfaces into a single unit. It helps in **avoiding name conflicts**, provides **access control**, and makes **code maintenance** easier.  
+
+---
+
+### **Types of Java Packages**
+1. **Built-in Packages** – Predefined packages that come with Java (e.g., `java.util`, `java.io`, `java.net`).  
+2. **User-defined Packages** – Custom packages created by the developer.
+
+---
+
+### **1. Using Built-in Packages**
+Java provides many built-in packages for various functionalities.  
+#### **Example: Using the `java.util` package**
+```java
+import java.util.Scanner;  // Importing Scanner class from java.util package
+
+public class BuiltInPackageExample {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);  // Creating Scanner object
+        System.out.print("Enter your name: ");
+        String name = scanner.nextLine();  
+        System.out.println("Hello, " + name + "!");
+        scanner.close();
+    }
+}
+```
+📌 *Here, we use `java.util.Scanner` to take user input.*
+
+---
+
+### **2. Creating and Using User-Defined Packages**
+#### **Step 1: Create a Package**
+Every Java class belongs to a package. You define a package using the `package` keyword.
+
+#### **Example: Creating a package called `mypackage`**
+```java
+// Save this file as MyClass.java inside a folder named "mypackage"
+package mypackage;  // Declaring package
+
+public class MyClass {
+    public void displayMessage() {
+        System.out.println("Hello from MyClass in mypackage!");
+    }
+}
+```
+
+---
+
+#### **Step 2: Using the Package in Another File**
+Now, let's use the `mypackage.MyClass` in another Java program.
+
+```java
+// Save this file outside "mypackage" or in a different package
+import mypackage.MyClass;  // Importing the class
+
+public class TestPackage {
+    public static void main(String[] args) {
+        MyClass obj = new MyClass();  // Creating an object of MyClass
+        obj.displayMessage();
+    }
+}
+```
+
+📌 *Ensure the `mypackage` folder is in the same directory as `TestPackage.java`.*
+
+---
+
+### **3. Using the `CLASSPATH` to Compile and Run Packages**
+If your package is inside a directory (e.g., `C:\JavaProjects`), navigate to that directory and compile the package like this:
+
+```sh
+javac -d . MyClass.java
+```
+Then, compile and run the `TestPackage.java` file:
+
+```sh
+javac TestPackage.java
+java TestPackage
+```
+
+---
+
+### **4. Access Modifiers and Packages**
+Access modifiers determine which classes can access a particular package.
+
+| Access Modifier | Within Same Class | Within Same Package | Outside Package (Subclass) | Outside Package |
+|----------------|------------------|--------------------|----------------------|---------------|
+| **public**    | ✅ Yes  | ✅ Yes | ✅ Yes | ✅ Yes |
+| **protected** | ✅ Yes  | ✅ Yes | ✅ Yes | ❌ No |
+| **default**   | ✅ Yes  | ✅ Yes | ❌ No | ❌ No |
+| **private**   | ✅ Yes  | ❌ No | ❌ No | ❌ No |
+
+---
+
+### **5. Sub-Packages in Java**
+A **sub-package** is a package inside another package.
+
+#### **Example: Creating a sub-package**
+```java
+package mypackage.subpackage;
+
+public class SubClass {
+    public void show() {
+        System.out.println("Hello from SubClass in subpackage!");
+    }
+}
+```
+
+To use this in another program:
+```java
+import mypackage.subpackage.SubClass;
+
+public class TestSubPackage {
+    public static void main(String[] args) {
+        SubClass obj = new SubClass();
+        obj.show();
+    }
+}
+```
+
+---
+
+### **6. Static Import in Java**
+Java allows importing static members of a class so they can be used without class references.
+
+#### **Example: Using `Math` class with `static import`**
+```java
+import static java.lang.Math.*;
+
+public class StaticImportExample {
+    public static void main(String[] args) {
+        System.out.println(sqrt(25));  // Instead of Math.sqrt(25)
+        System.out.println(pow(2, 3)); // Instead of Math.pow(2, 3)
+    }
+}
+```
+📌 *We used `sqrt()` and `pow()` directly without `Math.` prefix.*
+
+---
+
+### **7. Naming Conventions for Packages**
+- Package names should be in **lowercase**.
+- Use **reverse domain names** to avoid conflicts (e.g., `com.company.project`).
+- Keep related classes inside a **single package**.
+
+Example:
+```java
+package com.example.utils;
+```
+
+---
+
+### **Conclusion**
+✅ **Packages** help in code organization, access control, and name conflict resolution.  
+✅ You can use **built-in packages** or **create your own user-defined packages**.  
+✅ Use **sub-packages** and **static imports** for better structuring.  
+
+
+
+🚀
