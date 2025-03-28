@@ -9,7 +9,7 @@ public class SetExample {
         numbers.add(20);
         numbers.add(10);  // Duplicate (ignored)
 
-        // Printing Set
+      
         System.out.println("Numbers Set: " + numbers);
     }
 }
