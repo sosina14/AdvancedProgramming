@@ -8,6 +8,8 @@ public class MapExample {
         ages.put("Alice", 25);
         ages.put("Bob", 30);
         ages.put("Alice", 28);  // Overwrites previous value
+        ages.put("Charlie", 30);
+        ages.put("Bob", 20);
 
         // Printing Map
         System.out.println("Ages Map: " + ages);
