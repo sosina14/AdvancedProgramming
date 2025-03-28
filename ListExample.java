@@ -6,10 +6,10 @@ public class ListExample {
         ArrayList<String> names = new ArrayList<>();
         
         // Adding elements
-        names.add("Alice");
-        names.add("Bob");
-        names.add("Alice");  // Duplicates allowed
-
+        names.add("Sosina");
+        names.add("Redet");
+        names.add("Elsa"); 
+        names.add("Ribeka");
         // Printing List
         System.out.println("Names List: " + names);
 
