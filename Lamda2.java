@@ -17,15 +17,12 @@ public class Lamda2 {
 }
  */
 
- import java.util.*;
+import java.util.*;
 
 public class Lamda2 {
     public static void main(String[] args) {
         List<Integer> numbers = Arrays.asList(5, 2, 8, 1, 4, 7, 6, 9);
-
-        // Sorting in descending order using Lambda
-        numbers.sort((a, b) -> b - a);
-
+        numbers.sort((a, b) -> a - b);// Ascending Order
         System.out.println(numbers);
     }
 }
